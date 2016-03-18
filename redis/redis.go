@@ -4,7 +4,7 @@ import (
 	"log"
 	"time"
 	"github.com/garyburd/redigo/redis"
-	"github.com/shoother/g"
+	"github.com/shoother/services/g"
 )
 
 func InitRedis(redisConfig *g.RedisConfig) *redis.Pool {
