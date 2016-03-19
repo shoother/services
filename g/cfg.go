@@ -20,5 +20,7 @@ var (
 	RedisKVConfig RedisConfig
 	RedisDBConfig RedisConfig
 	RedisQueueConfig RedisConfig
+	MysqlMasterConfig MysqlConfig
+	MysqlSlaveConfig MysqlConfig
 	Root string
 )
