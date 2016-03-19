@@ -7,10 +7,10 @@ import (
 	"github.com/shoother/services/g"
 )
 
-func InitRedis(redisConfig *g.RedisConfig) *redis.Pool {
+func InitRedis(redisConfig g.RedisConfig) *redis.Pool {
 	pwd := redisConfig.Password
 
-	ConnPool := &redis.Pool{
+	ConnPool := redis.Pool{
 		MaxIdle:     redisConfig.Idle,
 		IdleTimeout: time.Second,
 		Dial: func() (redis.Conn, error) {
@@ -31,7 +31,7 @@ func InitRedis(redisConfig *g.RedisConfig) *redis.Pool {
 		},
 		TestOnBorrow: PingRedis,
 	}
-	return ConnPool
+	return &ConnPool
 }
 
 func PingRedis(c redis.Conn, t time.Time) error {

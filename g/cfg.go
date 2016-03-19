@@ -17,8 +17,8 @@ type GlobalConfig struct {
 }
 
 var (
-	RedisKVConfig *RedisConfig
-	RedisDBConfig *RedisConfig
-	RedisQueueConfig *RedisConfig
+	RedisKVConfig RedisConfig
+	RedisDBConfig RedisConfig
+	RedisQueueConfig RedisConfig
 	Root string
 )
